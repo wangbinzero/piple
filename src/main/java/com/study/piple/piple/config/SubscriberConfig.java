@@ -1,7 +1,7 @@
 package com.study.piple.piple.config;
 
-import com.study.piple.piple.subscriber.DealMessageSubscribe;
-import com.study.piple.piple.subscriber.OrderMessageSubscribe;
+import com.study.piple.piple.subscribe.DealMessageSubscribe;
+import com.study.piple.piple.subscribe.OrderMessageSubscribe;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;

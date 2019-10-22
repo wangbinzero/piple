@@ -1,6 +1,6 @@
-package com.study.piple.piple.subscriber;
+package com.study.piple.piple.subscribe;
 
-import com.study.piple.piple.subscriber.abstractor.AbstractMessageSubscribe;
+import com.study.piple.piple.subscribe.abstractor.AbstractMessageSubscribe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
