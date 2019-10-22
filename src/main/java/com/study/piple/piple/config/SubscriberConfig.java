@@ -1,7 +1,7 @@
 package com.study.piple.piple.config;
 
-import com.study.piple.piple.handler.DealMessageReceiver;
-import com.study.piple.piple.handler.OrderMessageReceiver;
+import com.study.piple.piple.subscriber.DealMessageSubscribe;
+import com.study.piple.piple.subscriber.OrderMessageSubscribe;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -10,7 +10,7 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
 @Configuration
-public class PublisherConfig {
+public class SubscriberConfig {
 
 
     @Bean
@@ -24,22 +24,22 @@ public class PublisherConfig {
 
 
     @Bean
-    public MessageListenerAdapter orderAdapter(OrderMessageReceiver orderMessage) {
+    public MessageListenerAdapter orderAdapter(OrderMessageSubscribe orderMessage) {
         return new MessageListenerAdapter(orderMessage, "receiveMessage");
     }
 
     @Bean
-    public MessageListenerAdapter dealAdapter(DealMessageReceiver dealMessage) {
+    public MessageListenerAdapter dealAdapter(DealMessageSubscribe dealMessage) {
         return new MessageListenerAdapter(dealMessage, "receiveMessage");
     }
 
     @Bean
-    public OrderMessageReceiver orderMessage() {
-        return new OrderMessageReceiver();
+    public OrderMessageSubscribe orderMessage() {
+        return new OrderMessageSubscribe();
     }
 
     @Bean
-    public DealMessageReceiver dealMessage() {
-        return new DealMessageReceiver();
+    public DealMessageSubscribe dealMessage() {
+        return new DealMessageSubscribe();
     }
 }
